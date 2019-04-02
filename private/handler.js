@@ -9,7 +9,7 @@ var exType = {
 };
 
 const indexHandler = res => {
-  var filePath = path.join(__dirname, "..", "public", "index.html");
+  var filePath = path.join(__dirname, "..", "Public", "index.html");
   fs.readFile(filePath, function(error, file) {
     if (error) {
       res.writeHead(500, exType.html);
@@ -22,8 +22,23 @@ const indexHandler = res => {
   });
 };
 
+const assetsHandler = (url, res) => {
+  var filePath = path.join(__dirname, "..", "Public", url);
+  var extension = url.split(".")[1];
+  console.log(url);
+  fs.readFile(filePath, function(error, file) {
+    if (error) {
+      res.writeHead(500, exType.html);
+      res.end("<h1>sorry, something wentff wrong</h1>");
+    } else {
+      res.writeHead(200, exType[extension]);
+      res.end(file);
+    }
+  });
+};
+
 const errHandler = res => {
-  let filePath = path.join(__dirname, "..", "public", "404.html");
+  let filePath = path.join(__dirname, "..", "Public", "404.html");
   fs.readFile(filePath, (err, file) => {
     if (err) {
       res.writeHead(500);
@@ -34,22 +49,9 @@ const errHandler = res => {
     }
   });
 };
-const assetsHandler = (url, res) => {
-  var filePath = path.join(__dirname, "..", url);
-  var extension = url.split(".")[1];
-  fs.readFile(filePath, function(error, file) {
-    if (error) {
-      res.writeHead(500, exType.html);
-      res.end("<h1>sorry, something went wrong</h1>");
-    } else {
-      res.writeHead(200, exType[extension]);
-      res.end(file);
-    }
-  });
-};
 
 module.exports = {
   index: indexHandler,
-  error: errHandler,
-  assets: assetsHandler
+  assets: assetsHandler,
+  error: errHandler
 };
