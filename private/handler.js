@@ -47,3 +47,9 @@ const assetsHandler = (url, res) => {
     }
   });
 };
+
+module.exports = {
+  index: indexHandler,
+  error: errHandler,
+  assets: assetsHandler
+};
