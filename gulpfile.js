@@ -1,4 +1,4 @@
-var gulp = require('gulg');
+var gulp = require('gulp');
 
 gulp.task('travis', ['build', 'testServerJS'],
   function() {
