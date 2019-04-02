@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/majdya/GIFit/issues"
   },
-  "homepage": "https://github.com/majdya/GIFit#readme"
+  "homepage": "https://github.com/majdya/GIFit#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
