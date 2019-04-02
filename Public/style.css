@@ -4,6 +4,7 @@ body {
 }
 section {
   text-align: center;
+  margin-top: 5%;
 }
 
 #search-input {
