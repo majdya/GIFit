@@ -5,3 +5,11 @@ body {
 section {
   text-align: center;
 }
+
+#search-input {
+  width: 70%;
+  height: 10%;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
