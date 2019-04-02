@@ -34,3 +34,16 @@ const errHandler = res => {
     }
   });
 };
+const assetsHandler = (url, res) => {
+  var filePath = path.join(__dirname, "..", url);
+  var extension = url.split(".")[1];
+  fs.readFile(filePath, function(error, file) {
+    if (error) {
+      res.writeHead(500, exType.html);
+      res.end("<h1>sorry, something went wrong</h1>");
+    } else {
+      res.writeHead(200, exType[extension]);
+      res.end(file);
+    }
+  });
+};
