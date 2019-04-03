@@ -14,7 +14,7 @@ inputField.addEventListener("keyup", function(event) {
 
   if (event.keyCode === 13) {
     console.log("it works");
-    //  image.classList.toggle("display-none");
+    image.classList.toggle("display-none");
   }
 });
 

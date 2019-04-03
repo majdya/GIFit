@@ -6,6 +6,8 @@ const router = (req, res) => {
     handler.index(res);
   } else if (url.includes("style")) {
     handler.assets(url, res);
+  } else if (url.includes("fetch")) {
+    handler.assets(url, res);
   } else {
     console.log(url);
   }
