@@ -3,6 +3,7 @@ body {
   color: black;
   display: grid;
 }
+
 #cc {
   text-align: center;
   margin-top: 5%;
@@ -22,8 +23,11 @@ body {
 #content-container {
   display: grid;
   position: relative;
+<<<<<<< HEAD
   /* margin-top: 15%; */
 
+=======
+>>>>>>> 6dbac1b2ccbf863f3b62c53f466bf23e9512fdc8
   text-align: center;
   max-width: 98%;
   align-content: center;
@@ -31,11 +35,15 @@ body {
   grid-column-gap: 2%;
   grid-template-columns: auto auto auto;
 }
+
 img {
   max-width: 400px;
   display: block;
   justify-self: center;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6dbac1b2ccbf863f3b62c53f466bf23e9512fdc8
   max-height: 400px;
   width: auto;
   height: auto;
@@ -53,6 +61,15 @@ img:hover {
   opacity: 0.7;
 }
 
+<<<<<<< HEAD
 .display-none {
   display: none;
+=======
+.display {
+  opacity: 1;
+}
+
+.display-none {
+  opacity: 0;
+>>>>>>> 6dbac1b2ccbf863f3b62c53f466bf23e9512fdc8
 }
