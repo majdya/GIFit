@@ -36,8 +36,8 @@ const indexHandler = res => {
 };
 
 const searchHandler = (url, res) => {
-  var url1 = domain + url.split('?')[1] + "&api_key=" + apiKey;
-  console.log(url.split('?')[1]);
+  var url1 = domain + url.split("?")[1] + "&api_key=" + apiKey;
+  console.log(url.split("?")[1]);
   getGifs(url1, res);
 };
 
@@ -56,7 +56,7 @@ const assetsHandler = (url, res) => {
   });
 };
 
-const errHandler = res => {
+const errHandler = (url, res) => {
   let filePath = path.join(__dirname, "..", "Public", "404.html");
   fs.readFile(filePath, (err, file) => {
     if (err) {
