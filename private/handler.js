@@ -1,11 +1,26 @@
-var fs = require("fs");
-var path = require("path");
+const fs = require("fs");
+const path = require("path");
+var getGifs = require("./getGifs.js");
+
+var domain = "https://api.giphy.com/v1/gifs/search?q=";
+var search = "cat";
+var apiKey = "QCbAV0VnE0UWZdureq8keOFGr1xBi0qy";
+//https://api.giphy.com/v1/gifs/search?q=cat&api_key=QCbAV0VnE0UWZdureq8keOFGr1xBi0qy
+
 
 var exType = {
-  html: { "Content-Type": "text/html" },
-  css: { "Content-Type": "text/css" },
-  js: { "Content-Type": "application/javascript" },
-  json: { "Content-Type": "application/json" }
+  html: {
+    "Content-Type": "text/html"
+  },
+  css: {
+    "Content-Type": "text/css"
+  },
+  js: {
+    "Content-Type": "application/javascript"
+  },
+  json: {
+    "Content-Type": "application/json"
+  }
 };
 
 const indexHandler = res => {
@@ -20,6 +35,16 @@ const indexHandler = res => {
     }
     res.end();
   });
+};
+
+const searchHandler = (url, res) => {
+//  console.log("##################################################################################");
+//  console.log(url);
+  var url1 = domain + url.split('?')[1] + "&api_key=" + apiKey;
+  console.log(url.split('?')[1]);
+  getGifs( url1 ,res);
+//  console.log("test sss ",getGifs(url,res));
+
 };
 
 const assetsHandler = (url, res) => {
@@ -53,5 +78,6 @@ const errHandler = res => {
 module.exports = {
   index: indexHandler,
   assets: assetsHandler,
-  error: errHandler
+  error: errHandler,
+  search: searchHandler
 };
