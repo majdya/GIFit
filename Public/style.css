@@ -1,6 +1,7 @@
 body {
   background: #3aaae8;
   color: black;
+  display: grid;
 }
 #cc {
   text-align: center;
@@ -13,31 +14,37 @@ body {
   border: 2px solid #ccc;
   box-sizing: border-box;
   border-radius: 10px;
-  font-size: 16px;
   padding-left: 30px;
   padding: 12px 20px 12px 40px;
+  margin-bottom: 3%;
 }
 
 #content-container {
-  margin-top: 10%;
   display: grid;
+  position: relative;
+  /* margin-top: 15%; */
+
   text-align: center;
   max-width: 98%;
-  height: 400px;
   align-content: center;
   grid-row-gap: 2%;
   grid-column-gap: 2%;
-
   grid-template-columns: auto auto auto;
 }
 img {
-  max-width: 100%;
+  max-width: 400px;
+  display: block;
+  justify-self: center;
+
+  max-height: 400px;
+  width: auto;
+  height: auto;
   padding: 0;
-  margin: 0;
   opacity: 1;
   display: block;
-  width: 100%;
-  height: auto;
+  size: 200 !important;
+  height: 50vh;
+  width: 98vh;
   transition: 0.5s ease;
   backface-visibility: hidden;
 }
@@ -47,5 +54,5 @@ img:hover {
 }
 
 .display-none {
-
+  display: none;
 }
