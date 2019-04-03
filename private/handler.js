@@ -5,8 +5,6 @@ var getGifs = require("./getGifs.js");
 var domain = "https://api.giphy.com/v1/gifs/search?q=";
 var search = "cat";
 var apiKey = "QCbAV0VnE0UWZdureq8keOFGr1xBi0qy";
-//https://api.giphy.com/v1/gifs/search?q=cat&api_key=QCbAV0VnE0UWZdureq8keOFGr1xBi0qy
-
 
 var exType = {
   html: {
@@ -38,13 +36,9 @@ const indexHandler = res => {
 };
 
 const searchHandler = (url, res) => {
-//  console.log("##################################################################################");
-//  console.log(url);
   var url1 = domain + url.split('?')[1] + "&api_key=" + apiKey;
   console.log(url.split('?')[1]);
-  getGifs( url1 ,res);
-//  console.log("test sss ",getGifs(url,res));
-
+  getGifs(url1, res);
 };
 
 const assetsHandler = (url, res) => {
