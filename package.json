@@ -21,5 +21,9 @@
   "homepage": "https://github.com/majdya/GIFit#readme",
   "devDependencies": {
     "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "node-fetch": "^2.3.0",
+    "node-fetch-npm": "^2.0.2"
   }
 }
