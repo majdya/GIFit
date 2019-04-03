@@ -1,5 +1,7 @@
 const http = require("http");
 const router = require("./router");
+const gifit = require("./gifit");
+
 const server = http.createServer(router);
 const PORT = 5001 || process.env.PORT;
 
