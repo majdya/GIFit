@@ -59,13 +59,13 @@ const assetsHandler = (url, res) => {
   });
 };
 
-<<<<<<< HEAD
+
 const faviconHandler = (url, res) => {
   console.log("hERE");
   var filePath = path.join(__dirname, "..", "Public", url);
   console.log(filePath);
   var extension = url.split(".")[1];
-  console.log(extension,"ttttt");
+  console.log(extension, "ttttt");
   console.log(url);
   fs.readFile(filePath, function(error, file) {
     if (error) {
@@ -79,19 +79,20 @@ const faviconHandler = (url, res) => {
 };
 
 const errHandler = res => {
-=======
-const errHandler = (url, res) => {
->>>>>>> 73deeed6441502c851873f3df135292ed40964f4
-  let filePath = path.join(__dirname, "..", "Public", "404.html");
-  fs.readFile(filePath, (err, file) => {
-    if (err) {
-      res.writeHead(500);
-      res.end("500 error");
-    } else {
-      res.writeHead(200, exType.html);
-      res.end(file);
-    }
-  });
+
+  const errHandler = (url, res) => {
+
+    let filePath = path.join(__dirname, "..", "Public", "404.html");
+    fs.readFile(filePath, (err, file) => {
+      if (err) {
+        res.writeHead(500);
+        res.end("500 error");
+      } else {
+        res.writeHead(200, exType.html);
+        res.end(file);
+      }
+    });
+  };
 };
 
 module.exports = {
