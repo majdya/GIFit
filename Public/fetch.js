@@ -24,6 +24,7 @@ function hey(value) {
       console.log('Fetch Error :-S', err);
     });
 }
+
 inputField.addEventListener("keyup", function(event) {
   event.preventDefault();
 
