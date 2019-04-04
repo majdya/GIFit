@@ -1,6 +1,6 @@
 # GIFit
 
-## Website Link: https://gifit.herokuapp.com/
+## Website Link: https://gifit-io.herokuapp.com/
 
 ### About GIFit
 
