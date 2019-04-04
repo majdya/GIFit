@@ -20,7 +20,7 @@ var exType = {
     "Content-Type": "application/json"
   },
   ico: {
-    "Content-Type": "image/x-icon"
+    "Content-Type": "image/vnd.microsoft.icon"
   }
 };
 
@@ -78,6 +78,24 @@ const faviconHandler = (url, res) => {
   });
 };
 
+const fetchHandler = (url, res) => {
+  console.log("hERE");
+  var filePath = path.join(__dirname, "..", "Public", url);
+  console.log(filePath);
+  var extension = url.split(".")[1];
+  console.log(extension, "ttttt");
+  console.log(url);
+  fs.readFile(filePath, function(error, file) {
+    if (error) {
+      res.writeHead(500, exType.html);
+      res.end("<h1>sorry, something wentff wrong</h1>");
+    } else {
+      res.writeHead(200, exType[extension]);
+      res.end(file);
+    }
+  });
+};
+
 
 
 const errHandler = (url, res) => {
@@ -100,5 +118,6 @@ module.exports = {
   assets: assetsHandler,
   error: errHandler,
   search: searchHandler,
-  favicon: faviconHandler
+  favicon: faviconHandler,
+  fetch: fetchHandler
 };
