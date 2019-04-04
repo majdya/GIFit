@@ -13,8 +13,8 @@ function hey(value) {
         }
         response.json().then((data) => {
           data = JSON.parse(data);
-          data = data.data.slice(0, 10)
-          for (var i = 1; i < 10; i++) {
+          data = data.data.slice(0, 13)
+          for (var i = 1; i < 13; i++) {
             document.getElementById("img" + i).src = data[i].images.downsized.url;
           }
         })

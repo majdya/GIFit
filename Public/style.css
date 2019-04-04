@@ -2,6 +2,9 @@ body {
   background: #3aaae8;
   color: black;
   display: grid;
+  box-shadow: inherit;
+  box-shadow: initial;
+  box-shadow: unset;
 }
 
 #cc {
@@ -28,24 +31,23 @@ body {
   align-content: center;
   grid-row-gap: 2%;
   grid-column-gap: 2%;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
 }
 
 img {
-  max-width: 400px;
+  max-width: 100%;
   display: block;
   justify-self: center;
   max-height: 400px;
-  width: auto;
-  height: auto;
+  width: 100%;
   padding: 0;
   opacity: 1;
-  display: block;
-  size: 200 !important;
-  height: 50vh;
-  width: 98vh;
+  height: 60vh;
   transition: 0.5s ease;
   backface-visibility: hidden;
+  /* border-width: 5px; */
+  box-shadow: inset 5em 1em gold;
+  border-color: rgb(188, 208, 190);
 }
 
 img:hover {
@@ -58,4 +60,60 @@ img:hover {
 
 .display-none {
   opacity: 0;
+}
+
+@media only screen and (max-width: 900px) {
+  #content-container {
+    display: grid;
+    position: relative;
+    text-align: center;
+    max-width: 98%;
+    align-content: center;
+    grid-row-gap: 2%;
+    grid-column-gap: 2%;
+    grid-template-columns: auto auto auto;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+    justify-self: center;
+    max-height: 300px;
+    width: 100%;
+    padding: 0;
+    opacity: 1;
+    height: 60vh;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+    /* border-width: 5px; */
+    box-shadow: inset 5em 1em gold;
+    border-color: rgb(188, 208, 190);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #content-container {
+    display: grid;
+    position: relative;
+    text-align: center;
+    max-width: 98%;
+    align-content: center;
+    grid-row-gap: 2%;
+    grid-column-gap: 2%;
+    grid-template-columns: auto auto;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+    justify-self: center;
+    max-height: 200px;
+    width: 100%;
+    padding: 0;
+    opacity: 1;
+    height: 60vh;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+    /* border-width: 5px; */
+    box-shadow: inset 5em 1em gold;
+    border-color: rgb(188, 208, 190);
+  }
 }
