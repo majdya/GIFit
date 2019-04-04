@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "node-fetch": "^2.3.0",
-    "node-fetch-npm": "^2.0.2"
-  }
+    "node-fetch-npm": "^2.0.2",
+    "request": "^2.88.0"
+  },
+  "keywords": []
 }

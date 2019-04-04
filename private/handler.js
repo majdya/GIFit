@@ -39,8 +39,8 @@ const indexHandler = res => {
 };
 
 const searchHandler = (url, res) => {
-  var url1 = domain + url.split('?')[1] + "&api_key=" + apiKey;
-  console.log(url.split('?')[1]);
+  var url1 = domain + url.split("?")[1] + "&api_key=" + apiKey;
+  console.log(url.split("?")[1]);
   getGifs(url1, res);
 };
 
@@ -59,6 +59,7 @@ const assetsHandler = (url, res) => {
   });
 };
 
+<<<<<<< HEAD
 const faviconHandler = (url, res) => {
   console.log("hERE");
   var filePath = path.join(__dirname, "..", "Public", url);
@@ -78,6 +79,9 @@ const faviconHandler = (url, res) => {
 };
 
 const errHandler = res => {
+=======
+const errHandler = (url, res) => {
+>>>>>>> 73deeed6441502c851873f3df135292ed40964f4
   let filePath = path.join(__dirname, "..", "Public", "404.html");
   fs.readFile(filePath, (err, file) => {
     if (err) {
